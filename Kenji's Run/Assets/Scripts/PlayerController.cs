@@ -6,61 +6,69 @@ public class PlayerController : MonoBehaviour {
 
     public float moveSpeed; // Movement speed of character
     public float jumpForce; // Jump height of character
-    private float horizontal = 0;
     public bool grounded; // Ground check 
-    private bool FacingRight = true;
+    private bool FacingRight; // Facing Right or not
     public LayerMask whatIsGround; // Setting Ground Layer to check
     private Collider2D myCollider; // Player's Collider
     private Rigidbody2D myRidgidBody; // Player's RidgidBody
     private Animator myAnimator; // Calling Animator on Player
-    private SpriteRenderer myRenderer;
-    private Transform myTransform;
+    private Transform myTransform; // Tansform Component
     public bool Attacking = false;
- 
+    public bool JumpAttacking = false;
+    public static bool isAttacking;
+
     // Use this for initialization
     void Start () {
+
+        FacingRight = true; // Settting bool to true since player starts in game facing right
+
+        // Getting Components
 
         myRidgidBody = GetComponent<Rigidbody2D>();
         myCollider = GetComponent<Collider2D>();
         myAnimator = GetComponent<Animator>();
-        myRenderer = GetComponent<SpriteRenderer>();
         myTransform = GetComponent<Transform>();
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
+        /*if (isAttacking)
+            myAnimator.SetBool("Attack", true);
+        else
+            myAnimator.SetBool("Attack", false);*/
 
-        horizontal = Input.GetAxis("Horizontal");
+        grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround); // Layer Check to see if player is grounded or not
+
+        float horizontal = Input.GetAxis("Horizontal"); // Calling Movement Controls
 
         GetInput();
-	}
+
+        ResetValues(); // Reset Values after Use
+        HandleMovement(horizontal); // Player Movement 
+        Flip(horizontal); // Flip Character Left and Right
+    }
+
+    private void HandleMovement(float horizontal) // Players Movement on the X Axis and with pre set controls are Left & Right Arrows and A & D
+    {
+        myRidgidBody.velocity = new Vector2(horizontal * moveSpeed, myRidgidBody.velocity.y); // Movement Speed
+
+        myAnimator.SetFloat("Speed", Mathf.Abs(horizontal)); // Moving Animation
+    }
+
+    void Flip(float horizontal)
+    {
+        if (horizontal > 0 && !FacingRight || horizontal < 0 && FacingRight)
+        {
+            FacingRight = !FacingRight;
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            myTransform.localScale = theScale;
+        }
+    }
 
     void GetInput()
     {
-
-        // Move Right 
-        if (Input.GetKey(KeyCode.D))
-        {
-            myRenderer.flipX = false;
-            myRidgidBody.velocity = new Vector2(moveSpeed, myRidgidBody.velocity.y);
-            if (!FacingRight)
-            {
-                Flip();
-            }
-        }
-
-        // Move Left
-        if (Input.GetKey(KeyCode.A))
-        {
-            //myRenderer.flipX = true;
-            myRidgidBody.velocity = new Vector2(-moveSpeed, myRidgidBody.velocity.y);
-            if (FacingRight)
-            {
-                Flip();
-            }       
-        }
 
         // Jump
         if (Input.GetKeyDown(KeyCode.Space))
@@ -73,30 +81,41 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Attack();
+            if (grounded)
+            {
+                Attack();
+            }
+
+            if (!grounded)
+            {
+                JumpAttack();
+            }
         }
 
         // Animator Setting
 
-        myAnimator.SetFloat("Speed", Mathf.Abs(horizontal)); // Moving Animation
-        myAnimator.SetBool("Grounded", grounded); // Jump Animation
+       
+        myAnimator.SetBool("Grounded", grounded);// Jump Animation
+        myAnimator.SetBool("JumpAttack", JumpAttacking); // Jump Attack animation
     }
 
     void Attack()
     {
         Attacking = false;
-        Debug.Log("LClick");
         myAnimator.SetTrigger("Attack");// Attack 1 animation
         myRidgidBody.velocity = new Vector3(0, 0, 0);
     }
 
-    void Flip()
+    void JumpAttack()
     {
-        FacingRight = !FacingRight;
+        JumpAttacking = true;
+        myRidgidBody.velocity = new Vector3(0, 0, 0);
+    }
 
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
+    
 
-        myTransform.localScale = theScale;
+    void ResetValues()
+    {
+        JumpAttacking = false;
     }
 }
