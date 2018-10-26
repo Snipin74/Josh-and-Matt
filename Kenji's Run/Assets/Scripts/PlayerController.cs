@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
     public bool Attacking = false;
     public bool JumpAttacking = false;
     public static bool isAttacking;
+    public LevelManager levelManager;
 
     // Use this for initialization
     void Start () {
@@ -28,10 +29,12 @@ public class PlayerController : MonoBehaviour {
         myCollider = GetComponent<Collider2D>();
         myAnimator = GetComponent<Animator>();
         myTransform = GetComponent<Transform>();
+        levelManager = FindObjectOfType<LevelManager>();
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 
         /*if (isAttacking)
             myAnimator.SetBool("Attack", true);
@@ -117,7 +120,7 @@ public class PlayerController : MonoBehaviour {
 
         if (collision.gameObject.name.Equals("Attack"))
         {
-            Destroy(gameObject);
+            levelManager.RespawnPlayer();
         }
     }
 }
