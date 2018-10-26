@@ -44,14 +44,18 @@ public class PlayerController : MonoBehaviour {
 
         GetInput();
 
-        ResetValues(); // Reset Values after Use
+        
         HandleMovement(horizontal); // Player Movement 
         Flip(horizontal); // Flip Character Left and Right
+        ResetValues(); // Reset Values after Use
     }
 
     private void HandleMovement(float horizontal) // Players Movement on the X Axis and with pre set controls are Left & Right Arrows and A & D
     {
-        myRidgidBody.velocity = new Vector2(horizontal * moveSpeed, myRidgidBody.velocity.y); // Movement Speed
+        if(!myAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack")) // Makes player not walk during attack
+        {
+             myRidgidBody.velocity = new Vector2(horizontal * moveSpeed, myRidgidBody.velocity.y); // Movement Speed
+        }
 
         myAnimator.SetFloat("Speed", Mathf.Abs(horizontal)); // Moving Animation
     }
@@ -81,9 +85,10 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (grounded)
+            if (grounded && !Attacking && !myAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
             {
-                Attack();
+                myAnimator.SetTrigger("Attack");// Attack 1 animation
+                moveSpeed = 0;
             }
 
             if (!grounded)
@@ -101,9 +106,8 @@ public class PlayerController : MonoBehaviour {
 
     void Attack()
     {
-        Attacking = false;
-        myAnimator.SetTrigger("Attack");// Attack 1 animation
-        myRidgidBody.velocity = new Vector3(0, 0, 0);
+        //Attacking = false;
+       
     }
 
     void JumpAttack()
@@ -117,5 +121,7 @@ public class PlayerController : MonoBehaviour {
     void ResetValues()
     {
         JumpAttacking = false;
+        moveSpeed = 10;
+        
     }
 }
