@@ -93,7 +93,8 @@ public class PlayerController : MonoBehaviour {
 
             if (!grounded)
             {
-                JumpAttack();
+                JumpAttacking = true;
+                myRidgidBody.velocity = new Vector3(0, 0, 0);
             }
         }
 
@@ -103,21 +104,7 @@ public class PlayerController : MonoBehaviour {
         myAnimator.SetBool("Grounded", grounded);// Jump Animation
         myAnimator.SetBool("JumpAttack", JumpAttacking); // Jump Attack animation
     }
-
-    void Attack()
-    {
-        //Attacking = false;
-       
-    }
-
-    void JumpAttack()
-    {
-        JumpAttacking = true;
-        myRidgidBody.velocity = new Vector3(0, 0, 0);
-    }
-
-    
-
+  
     void ResetValues()
     {
         JumpAttacking = false;
