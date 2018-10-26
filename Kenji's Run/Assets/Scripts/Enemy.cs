@@ -15,6 +15,10 @@ public class Enemy : MonoBehaviour {
     private bool notAtEdge;
     public Transform EdgeCheck;
     private Rigidbody2D myRidgidBody; // Player's RidgidBody
+    private Animator myAnimator;
+
+    public static bool IsAttacking = false;
+    //internal static bool IsAttacking;
 
 
 
@@ -22,6 +26,7 @@ public class Enemy : MonoBehaviour {
     void Start () {
 
         myRidgidBody = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
 
     }
 
@@ -46,6 +51,15 @@ public class Enemy : MonoBehaviour {
             transform.localScale = new Vector3(0.64f, 0.5f, transform.localScale.z);
             myRidgidBody.velocity = new Vector2(-moveSpeed, myRidgidBody.velocity.y);
         }
+
+        if (IsAttacking)
+        {
+            myAnimator.SetBool("Attack", true);
+            myRidgidBody.velocity = Vector2.zero;
+        }
+        else
+            myAnimator.SetBool("Attack", false);
+            
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -54,5 +68,11 @@ public class Enemy : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
+       /* if (collision.gameObject.name.Equals("Player"))
+        {
+            Enemy.IsAttacking = true;
+            Destroy(gameObject);
+        }*/
     }
 }

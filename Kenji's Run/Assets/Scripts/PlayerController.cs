@@ -111,4 +111,13 @@ public class PlayerController : MonoBehaviour {
         moveSpeed = 10;
         
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.name.Equals("Attack"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
