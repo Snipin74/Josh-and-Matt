@@ -71,11 +71,5 @@ public class FemaleZombieController : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-
-        /* if (collision.gameObject.name.Equals("Player"))
-         {
-             Enemy.IsAttacking = true;
-             Destroy(gameObject);
-         }*/
     }
 }

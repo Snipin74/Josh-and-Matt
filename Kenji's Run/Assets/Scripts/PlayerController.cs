@@ -36,11 +36,6 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        /*if (isAttacking)
-            myAnimator.SetBool("Attack", true);
-        else
-            myAnimator.SetBool("Attack", false);*/
-
         grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround); // Layer Check to see if player is grounded or not
 
         float horizontal = Input.GetAxis("Horizontal"); // Calling Movement Controls

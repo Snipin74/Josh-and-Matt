@@ -18,9 +18,6 @@ public class MaleZombieController : MonoBehaviour {
     private Animator myAnimator;
 
     public static bool IsAttacking = false;
-    //internal static bool IsAttacking;
-
-
 
     // Use this for initialization
     void Start()
@@ -71,11 +68,5 @@ public class MaleZombieController : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-
-        /* if (collision.gameObject.name.Equals("Player"))
-         {
-             Enemy.IsAttacking = true;
-             Destroy(gameObject);
-         }*/
     }
 }
