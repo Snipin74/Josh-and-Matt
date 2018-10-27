@@ -18,6 +18,7 @@ public class MaleZombieController : MonoBehaviour {
     private Animator myAnimator;
 
     public static bool IsAttacking = false;
+    public GameObject ninjaStar;
 
     // Use this for initialization
     void Start()
@@ -65,6 +66,11 @@ public class MaleZombieController : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name.Equals("Sword"))
+        {
+            Destroy(gameObject);
+        }
+
+        if( collision.tag == "Ninja Star")
         {
             Destroy(gameObject);
         }

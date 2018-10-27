@@ -25,9 +25,9 @@ GameObject:
   - component: {fileID: 61129294664803562}
   - component: {fileID: 95629656205818504}
   - component: {fileID: 114873382965014170}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Male Zombie
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4470782593140178}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EdgeCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4759226121810854}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4111068125678316}
   - component: {fileID: 58854637859879124}
   - component: {fileID: 114463777788283024}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AttackCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4952442968672486}
   - component: {fileID: 58605879797056080}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1392767653866088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: -2.56, z: 0}
+  m_LocalPosition: {x: 20.99, y: -2.56, z: 0}
   m_LocalScale: {x: 0.64000005, y: 0.5, z: 0}
   m_Children:
   - {fileID: 4759226121810854}
@@ -251,7 +251,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.49351966, y: 2.2681231}
+  m_Offset: {x: 0.31225133, y: 2.2681231}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -262,7 +262,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3775809, y: 4.2702913}
+  m_Size: {x: 1.7401175, y: 4.2702913}
   m_EdgeRadius: 0
 --- !u!95 &95629656205818504
 Animator:
@@ -312,6 +312,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   EdgeCheck: {fileID: 4470782593140178}
+  ninjaStar: {fileID: 0}
 --- !u!212 &212242230398390230
 SpriteRenderer:
   m_ObjectHideFlags: 1

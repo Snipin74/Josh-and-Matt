@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour {
     public static bool isAttacking;
     public LevelManager levelManager;
 
+    public Transform firepoint;
+    public GameObject NinjaStar;
+
     // Use this for initialization
     void Start () {
 
@@ -94,12 +97,18 @@ public class PlayerController : MonoBehaviour {
                 JumpAttacking = true;
                 myRidgidBody.velocity = new Vector3(0, 0, 0);
             }
+            
         }
 
-        // Animator Setting
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            Instantiate(NinjaStar, firepoint.position, firepoint.rotation);
+        }
 
-       
-        myAnimator.SetBool("Grounded", grounded);// Jump Animation
+            // Animator Setting
+
+
+            myAnimator.SetBool("Grounded", grounded);// Jump Animation
         myAnimator.SetBool("JumpAttack", JumpAttacking); // Jump Attack animation
     }
   
