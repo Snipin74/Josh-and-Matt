@@ -65,7 +65,7 @@ public class MaleZombieController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Sword"))
+        if (collision.tag == "Sword")
         {
             Destroy(gameObject);
         }

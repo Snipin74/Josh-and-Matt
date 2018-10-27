@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 399975164}
   m_Layer: 9
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1655,17 +1655,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 61303687812155872, guid: 122f013c88f5cbd42b28ec3e5e4536ee,
+    - target: {fileID: 114873382965014170, guid: 122f013c88f5cbd42b28ec3e5e4536ee,
         type: 2}
-      propertyPath: m_Offset.x
-      value: 0.49749362
+      propertyPath: ninjaStar
+      value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 61303687812155872, guid: 122f013c88f5cbd42b28ec3e5e4536ee,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 1.369633
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114754117326635672, guid: 122f013c88f5cbd42b28ec3e5e4536ee, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 122f013c88f5cbd42b28ec3e5e4536ee, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1540625335

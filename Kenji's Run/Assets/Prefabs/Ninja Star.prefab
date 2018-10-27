@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starSpeed: 10
-  rotationSpeed: 200
+  rotationSpeed: -200
   thePlayer: {fileID: 0}
 --- !u!212 &212421596124968196
 SpriteRenderer:

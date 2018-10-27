@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 61129294664803562}
   - component: {fileID: 95629656205818504}
   - component: {fileID: 114873382965014170}
+  - component: {fileID: 114754117326635672}
   m_Layer: 11
   m_Name: Male Zombie
   m_TagString: Enemy
@@ -251,7 +252,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.31225133, y: 2.2681231}
+  m_Offset: {x: 0.49749362, y: 2.2681231}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -262,7 +263,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7401175, y: 4.2702913}
+  m_Size: {x: 1.369633, y: 4.2702913}
   m_EdgeRadius: 0
 --- !u!95 &95629656205818504
 Animator:
@@ -293,6 +294,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1dee4f747af8a64aa5a2b6e64ea5a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114754117326635672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1392767653866088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6676b5f5001f28446a77c5c524d109a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffect: {fileID: 0}
+  enemyHealth: 3
+  pointsOnDeath: 0
 --- !u!114 &114873382965014170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -313,6 +328,7 @@ MonoBehaviour:
     m_Bits: 1024
   EdgeCheck: {fileID: 4470782593140178}
   ninjaStar: {fileID: 0}
+  damageToGive: 1
 --- !u!212 &212242230398390230
 SpriteRenderer:
   m_ObjectHideFlags: 1
