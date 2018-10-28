@@ -9,20 +9,20 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1011790022722804}
+  m_RootGameObject: {fileID: 1333634218342390}
   m_IsPrefabAsset: 1
---- !u!1 &1011790022722804
+--- !u!1 &1333634218342390
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4320764375127792}
-  - component: {fileID: 212421596124968196}
-  - component: {fileID: 58858458467056996}
-  - component: {fileID: 50705493518628346}
-  - component: {fileID: 114507957707243458}
+  - component: {fileID: 4094809154939194}
+  - component: {fileID: 212372906141247114}
+  - component: {fileID: 58931853691048740}
+  - component: {fileID: 50840592251932670}
+  - component: {fileID: 114294186455933734}
   m_Layer: 0
   m_Name: Ninja Star
   m_TagString: Ninja Star
@@ -30,26 +30,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4320764375127792
+--- !u!4 &4094809154939194
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1011790022722804}
+  m_GameObject: {fileID: 1333634218342390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.76, y: -0.099, z: 0}
-  m_LocalScale: {x: 0.11924774, y: 0.11229972, z: 1}
+  m_LocalPosition: {x: 0.954, y: -0.904, z: 0}
+  m_LocalScale: {x: 0.14140628, y: 0.12642606, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50705493518628346
+--- !u!50 &50840592251932670
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1011790022722804}
+  m_GameObject: {fileID: 1333634218342390}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -63,27 +63,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58858458467056996
+--- !u!58 &58931853691048740
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1011790022722804}
+  m_GameObject: {fileID: 1333634218342390}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.19620766, y: -0.28251365}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.5563488
---- !u!114 &114507957707243458
+  m_Radius: 2.1000001
+--- !u!114 &114294186455933734
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1011790022722804}
+  m_GameObject: {fileID: 1333634218342390}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09c82694537e326499e9c7e6b466f25b, type: 3}
@@ -92,12 +92,12 @@ MonoBehaviour:
   starSpeed: 10
   rotationSpeed: -200
   thePlayer: {fileID: 0}
---- !u!212 &212421596124968196
+--- !u!212 &212372906141247114
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1011790022722804}
+  m_GameObject: {fileID: 1333634218342390}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -127,12 +127,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ce3eb083cfc7dbc4e8cfdf6f0796fe72, type: 3}
-  m_Color: {r: 0.9716981, g: 0, b: 0.038944803, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f9ed15a59138e244e87043b88a154a73, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9.6, y: 7.2}
+  m_Size: {x: 4.2, y: 4.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
