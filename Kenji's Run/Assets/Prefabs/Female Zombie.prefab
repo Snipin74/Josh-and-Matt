@@ -84,10 +84,11 @@ GameObject:
   - component: {fileID: 4810823587554130}
   - component: {fileID: 212990524597437460}
   - component: {fileID: 61613149116242088}
-  - component: {fileID: 114916399644088284}
   - component: {fileID: 50240133292630818}
   - component: {fileID: 61758290141725740}
   - component: {fileID: 95322579736985904}
+  - component: {fileID: 114209833292170070}
+  - component: {fileID: 114738493989427986}
   m_Layer: 0
   m_Name: Female Zombie
   m_TagString: Untagged
@@ -141,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1572084620612540}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 42.69, y: -2.56, z: 0}
+  m_LocalPosition: {x: 72.53, y: 3.54, z: 0}
   m_LocalScale: {x: 0.64000005, y: 0.5, z: 0}
   m_Children:
   - {fileID: 4355172150674982}
@@ -282,6 +283,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114209833292170070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1572084620612540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b58c1222038ca48af00fe25a67686b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  moveRight: 0
+  wallCheck: {fileID: 4355172150674982}
+  wallCheckRadius: 0.1
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 1024
+  EdgeCheck: {fileID: 4993852998580136}
+--- !u!114 &114738493989427986
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1572084620612540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7388750e15f3e40bdd56fe31cdcfef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114851935732418628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -293,25 +324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5668c1351b27344b4d30cb83473368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114916399644088284
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1572084620612540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eac6b93449dbe4646a15aa545c284c89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  moveRight: 0
-  wallCheck: {fileID: 4355172150674982}
-  wallCheckRadius: 0.1
-  whatIsWall:
-    serializedVersion: 2
-    m_Bits: 1024
-  EdgeCheck: {fileID: 4993852998580136}
 --- !u!212 &212990524597437460
 SpriteRenderer:
   m_ObjectHideFlags: 1

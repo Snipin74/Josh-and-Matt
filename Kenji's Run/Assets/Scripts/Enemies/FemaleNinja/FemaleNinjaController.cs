@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FemaleZombieController : MonoBehaviour {
+public class FemaleNinjaController : MonoBehaviour {
 
     public float moveSpeed;
     public bool moveRight;
@@ -76,3 +76,4 @@ public class FemaleZombieController : MonoBehaviour {
         }
     }
 }
+
