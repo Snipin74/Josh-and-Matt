@@ -18,7 +18,6 @@ public class MaleZombieController : MonoBehaviour {
     private Animator myAnimator;
 
     public static bool IsAttacking = false;
-    public static bool IsWalking = false;
     public GameObject ninjaStar;
     public SpriteRenderer sr;
 
@@ -40,60 +39,53 @@ public class MaleZombieController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        float animSpeed = 0.0f;
-        if(Vector3.Distance(transform.position, myPlayer.position) < stopDistance && !IsWalking)
+        if(Vector3.Distance(transform.position, myPlayer.position) < stopDistance)
         {
-            animSpeed = moveSpeed * Time.deltaTime;
-
-            transform.position = Vector2.MoveTowards(transform.position, myPlayer.position, animSpeed);
-
-           
+            transform.position = Vector2.MoveTowards(transform.position, myPlayer.position, moveSpeed * Time.deltaTime);
+            myAnimator.SetFloat("Speed", moveSpeed);
 
 
-            //sr.flipX = (myPlayer.transform.position.x < transform.position.x) ? true : false;
-            if (myPlayer.transform.position.x < transform.position.x)
-            {
-                sr.flipX = true;
-            } else
-            {
-                sr.flipX = false;
+            sr.flipX = (myPlayer.transform.position.x < transform.position.x) ? true : false;
+            //if (myPlayer.transform.position.x < transform.position.x)
+            //{
+            //    sr.flipX = true;
+            //} else
+            //{
+            //    sr.flipX = false;
 
-            }
+            //}
         }
 
-        if(myAnimator.GetFloat("Speed") != animSpeed)
-            myAnimator.SetFloat("Speed", animSpeed);
 
+       /* hittingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, whatIsWall);
+        notAtEdge = Physics2D.OverlapCircle(EdgeCheck.position, wallCheckRadius, whatIsWall);
 
-            /* hittingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, whatIsWall);
-             notAtEdge = Physics2D.OverlapCircle(EdgeCheck.position, wallCheckRadius, whatIsWall);
+        if (hittingWall || !notAtEdge)
+        {
+            moveRight = !moveRight;
+        }
 
-             if (hittingWall || !notAtEdge)
-             {
-                 moveRight = !moveRight;
-             }
-
-             if (moveRight)
-             {
-                 transform.localScale = new Vector3(-0.64f, 0.5f, transform.localScale.z);
-                 myRidgidBody.velocity = new Vector2(moveSpeed, myRidgidBody.velocity.y);
-
-             }
-             else
-             {
-                 transform.localScale = new Vector3(0.64f, 0.5f, transform.localScale.z);
-                 myRidgidBody.velocity = new Vector2(-moveSpeed, myRidgidBody.velocity.y);
-             }
-
-             if (IsAttacking)
-             {
-                 myAnimator.SetBool("Attack", true);
-                 myRidgidBody.velocity = Vector2.zero;
-             }
-             else
-                 myAnimator.SetBool("Attack", false);*/
+        if (moveRight)
+        {
+            transform.localScale = new Vector3(-0.64f, 0.5f, transform.localScale.z);
+            myRidgidBody.velocity = new Vector2(moveSpeed, myRidgidBody.velocity.y);
 
         }
+        else
+        {
+            transform.localScale = new Vector3(0.64f, 0.5f, transform.localScale.z);
+            myRidgidBody.velocity = new Vector2(-moveSpeed, myRidgidBody.velocity.y);
+        }
+
+        if (IsAttacking)
+        {
+            myAnimator.SetBool("Attack", true);
+            myRidgidBody.velocity = Vector2.zero;
+        }
+        else
+            myAnimator.SetBool("Attack", false);*/
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
