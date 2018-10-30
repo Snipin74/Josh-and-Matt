@@ -12090,6 +12090,15 @@ Prefab:
       propertyPath: ninjaStar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 212242230398390230, guid: 122f013c88f5cbd42b28ec3e5e4536ee,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327622763243700, guid: 122f013c88f5cbd42b28ec3e5e4536ee, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.64
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 122f013c88f5cbd42b28ec3e5e4536ee, type: 2}

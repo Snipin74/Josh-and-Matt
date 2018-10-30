@@ -41,6 +41,7 @@ public class MaleZombieController : MonoBehaviour {
         if(Vector2.Distance(transform.position, myPlayer.position) < stopDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, myPlayer.position, moveSpeed * Time.deltaTime);
+            myAnimator.SetFloat("Speed", moveSpeed);
         }
 
        /* hittingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, whatIsWall);
