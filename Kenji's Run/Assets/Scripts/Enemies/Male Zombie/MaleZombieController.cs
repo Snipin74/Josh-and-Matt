@@ -7,7 +7,7 @@ public class MaleZombieController : MonoBehaviour {
     public float moveSpeed;
     public bool moveRight;
 
-    public Transform wallCheck;
+    public Transform wallCheck, player;
     public float wallCheckRadius;
     public LayerMask whatIsWall;
     private bool hittingWall;
@@ -19,30 +19,41 @@ public class MaleZombieController : MonoBehaviour {
 
     public static bool IsAttacking = false;
     public GameObject ninjaStar;
+    public SpriteRenderer sr;
 
     // Player Chasing AI
 
     private Transform myPlayer;
     public float stopDistance;
 
+
     // Use this for initialization
     void Start()
     {
-
+        sr = GetComponent<SpriteRenderer>();
         myRidgidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         myPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Vector2.Distance(transform.position, myPlayer.position) < stopDistance)
+        if(Vector3.Distance(transform.position, myPlayer.position) < stopDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, myPlayer.position, moveSpeed * Time.deltaTime);
             myAnimator.SetFloat("Speed", moveSpeed);
+
+            if(myPlayer.transform.position.x < transform.position.x)
+            {
+                sr.flipX = true;
+            } else
+            {
+                sr.flipX = false;
+
+            }
         }
+
 
        /* hittingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, whatIsWall);
         notAtEdge = Physics2D.OverlapCircle(EdgeCheck.position, wallCheckRadius, whatIsWall);
