@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -122,9 +123,10 @@ public class PlayerController : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.name.Equals("Attack"))
+        if (collision.gameObject.name.Equals("Attack") || (collision.gameObject.layer == 11))
         {
-            levelManager.RespawnPlayer();
+            //levelManager.RespawnPlayer();
+            SceneManager.LoadScene("DeathMenu");
         }
     }
 }

@@ -17,6 +17,7 @@ public class SharkController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
         myTrans = this.transform;
         myBody = this.GetComponent<Rigidbody2D>();
         myWidth = this.GetComponent<SpriteRenderer>().bounds.extents.x;
@@ -40,12 +41,5 @@ public class SharkController : MonoBehaviour {
         Vector2 myVel = myBody.velocity;
         myVel.x = -myTrans.right.x * speed;
         myBody.velocity = myVel;
-
-
-       //float step = speed * Time.deltaTime;
-
-        //transform.position = Vector3.MoveTowards(transform.position, target.position, step);
-
-       
     }
 }
