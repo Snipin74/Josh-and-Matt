@@ -390,7 +390,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1454666992}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.618004}
 --- !u!61 &159450942
 BoxCollider2D:
@@ -5235,7 +5235,7 @@ GameObject:
   - component: {fileID: 286368074}
   - component: {fileID: 286368073}
   - component: {fileID: 286368075}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: night-sea
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -12245,8 +12245,8 @@ Transform:
   - {fileID: 1242244555}
   - {fileID: 144449397}
   - {fileID: 811883412}
-  - {fileID: 159450941}
   - {fileID: 1542201958}
+  - {fileID: 159450941}
   - {fileID: 864139093}
   - {fileID: 1064789978}
   m_Father: {fileID: 0}
