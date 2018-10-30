@@ -42,7 +42,7 @@ public class SharkController : MonoBehaviour {
         myBody.velocity = myVel;
 
 
-        //float step = speed * Time.deltaTime;
+       //float step = speed * Time.deltaTime;
 
         //transform.position = Vector3.MoveTowards(transform.position, target.position, step);
 
