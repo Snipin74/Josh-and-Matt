@@ -7,7 +7,7 @@ public class MaleZombieController : MonoBehaviour {
     public float moveSpeed;
     public bool moveRight;
 
-    public Transform wallCheck;
+    public Transform wallCheck, player;
     public float wallCheckRadius;
     public LayerMask whatIsWall;
     private bool hittingWall;
@@ -44,16 +44,14 @@ public class MaleZombieController : MonoBehaviour {
             transform.position = Vector2.MoveTowards(transform.position, myPlayer.position, moveSpeed * Time.deltaTime);
             myAnimator.SetFloat("Speed", moveSpeed);
 
+            if(myPlayer.transform.position.x < transform.position.x)
+            {
+                sr.flipX = true;
+            } else
+            {
+                sr.flipX = false;
 
-            sr.flipX = (myPlayer.transform.position.x < transform.position.x) ? true : false;
-            //if (myPlayer.transform.position.x < transform.position.x)
-            //{
-            //    sr.flipX = true;
-            //} else
-            //{
-            //    sr.flipX = false;
-
-            //}
+            }
         }
 
 
