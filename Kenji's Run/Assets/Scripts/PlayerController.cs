@@ -123,10 +123,11 @@ public class PlayerController : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.name.Equals("Attack") || (collision.gameObject.layer == 11))
+        if (collision.gameObject.name.Equals("Attack") || (collision.gameObject.layer == 11) || (collision.tag == "Enemy"))
         {
             //levelManager.RespawnPlayer();
             SceneManager.LoadScene("DeathMenu");
         }
     }
 }
+
